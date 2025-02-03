@@ -1,0 +1,67 @@
+#!/bin/sh
+killall sxhkd
+sxhkd &
+$HOME/.config/bspwm/scripts/randomWall.sh
+python3 $HOME/.config/bspwm/colors.py
+zathura-pywal -a 0.85
+killall xss-lock
+
+
+bspc config border_width        2 
+bspc config window_gap           5
+bspc config focused_border_color "#ffffff"
+bspc config focused_border_width 2
+
+bspc config normal_border_color "#330060"
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a chromiun desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a burp-StartBurp: state=floating
+bspc config focus_follows_pointer true
+
+
+
+killall polybar
+
+bspc monitor  -d I II III IV V VI VII 
+if [[ $(xrandr -q | grep 'HDMI1 connected') ]]; then
+    xrandr --output eDP1 --primary --mode 1920x1080 --rotate normal --output HDMI1 --mode 1920x1080 --rotate normal --right-of eDP1
+    # Espacios de trabajo
+    bspc monitor HDMI1 -d VIII
+else
+    xrandr --output HDMI1 --off
+    # Eliminar nodos
+    while bspc node @V: --kill; do
+        :
+    done
+    while bspc node @VI: --kill; do
+        :
+    done
+    while bspc node @VII: --kill; do
+        :
+    done
+    while bspc node @VIII: --kill; do
+        :
+    done
+    # Eliminar espacios de trabajo
+    bspc desktop -r V VI VII VIII
+    # Eliminar monitor
+    bspc monitor HDMI1 -r
+fi
+
+$HOME/.config/polybar/launch.sh
+
+killall picom
+picom -f --daemon --config "${HOME}/.config/picom/picom.conf" &
+
+killall mpd
+mpd --no-daemon --stdout --verbose
+
+xss-lock -- /home/lur/.config/hear_lock.sh 

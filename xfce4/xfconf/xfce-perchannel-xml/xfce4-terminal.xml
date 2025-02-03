@@ -1,0 +1,21 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<channel name="xfce4-terminal" version="1.0">
+  <property name="background-mode" type="string" value="TERMINAL_BACKGROUND_TRANSPARENT"/>
+  <property name="background-darkness" type="double" value="0.90000000000000002"/>
+  <property name="scrolling-on-keystroke" type="bool" value="true"/>
+  <property name="scrolling-bar" type="string" value="TERMINAL_SCROLLBAR_NONE"/>
+  <property name="misc-show-unsafe-paste-dialog" type="bool" value="false"/>
+  <property name="misc-cursor-shape" type="string" value="TERMINAL_CURSOR_SHAPE_IBEAM"/>
+  <property name="font-name" type="string" value="Cascadia Code 12"/>
+  <property name="misc-menubar-default" type="bool" value="false"/>
+  <property name="misc-borders-default" type="bool" value="false"/>
+  <property name="misc-confirm-close" type="bool" value="false"/>
+  <property name="title-mode" type="string" value="TERMINAL_TITLE_HIDE"/>
+  <property name="misc-cursor-blinks" type="bool" value="false"/>
+  <property name="misc-default-geometry" type="string" value="76x24"/>
+  <property name="background-image-file" type="string" value="/home/lur/wallpapers/96yottea-anime-anime-girls-2302834-wallhere.com.jpg"/>
+  <property name="background-image-shading" type="double" value="0.73999999999999999"/>
+  <property name="background-image-style" type="string" value="TERMINAL_BACKGROUND_STYLE_FILLED"/>
+  <property name="color-background" type="string" value="#000000000000"/>
+</channel>

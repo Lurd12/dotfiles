@@ -1,0 +1,581 @@
+; ____       _       _
+;|  _ \ ___ | |_   _| |__   __ _ _ __
+;| |_) / _ \| | | | | '_ \ / _` | '__|  z0mbi3
+;|  __/ (_) | | |_| | |_) | (_| | |     https://github.com/gh0stzk/dotfiles
+;|_|   \___/|_|\__, |_.__/ \__,_|_|     z0mbi3.zk@protonmail.com
+;               |___/
+
+[global/wm]
+
+margin-bottom = 0
+margin-top = 0
+; __  __           _       _
+;|  \/  | ___   __| |_   _| | ___  ___
+;| |\/| |/ _ \ / _` | | | | |/ _ \/ __|   z0mbi3
+;| |  | | (_) | (_| | |_| | |  __/\__ \   https://github.com/gh0stzk/dotfiles
+;|_|  |_|\___/ \__,_|\__,_|_|\___||___/   z0mbi3.zk@protonmail.com
+
+
+[module/bgi]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg_2}
+label-background          = ${color.bg-alt}
+
+[module/bri]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg_2}
+label-background          = ${color.bg-alt}
+
+[module/byi]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg_2}
+label-background          = ${color.bg-alt}
+
+[module/bpi]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg_2}
+label-background          = ${color.bg-alt}
+
+[module/bbi]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg_2}
+label-background          = ${color.bg-alt}
+
+[module/boi]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg_2}
+label-background          = ${color.bg-alt}
+
+[module/bii]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg_2}
+label-background          = ${color.bg-alt}
+##
+
+[module/bgd]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg-alt}
+label-background          = ${color.bg_2}
+
+[module/brd]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg-alt}
+label-background          = ${color.bg_2}
+
+[module/byd]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg-alt}
+label-background          = ${color.bg_2}
+
+[module/bpd]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg-alt}
+label-background          = ${color.bg_2}
+
+[module/bbd]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg-alt}
+label-background          = ${color.bg_2}
+
+[module/bod]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg-alt}
+label-background          = ${color.bg_2}
+
+[module/bid]
+type                      = custom/text
+label                     = "%{T4}%{T-}"
+label-foreground          = ${color.bg-alt}
+label-background          = ${color.bg_2}
+
+######################################################
+
+[module/date]
+type = internal/date
+
+interval = 1.0
+
+time = %I:%M %P
+;;date-alt = " %A, %d %B %Y"
+
+format = <label>
+format-prefix-background = ${color.bg_2}
+format-prefix-foreground= ${color.bg}
+label-padding = 4 pt
+label = "%{A1:OpenApps --calendar:}%time%%{A}"
+label-background = ${color.bg_2}
+label-foreground= ${color.bg}
+
+######################################################
+
+[module/filesystem]
+type = internal/fs
+
+mount-0 = /
+interval = 60
+fixed-values = false
+
+format-mounted = <label-mounted>
+format-mounted-prefix = 
+format-mounted-prefix-padding = 4 pt
+format-mounted-prefix-foreground = ${color.icon_color}
+format-mounted-prefix-background = ${color.bg_2}
+
+format-unmounted = <label-unmounted>
+format-unmounted-prefix = 
+format-unmounted-prefix-background = ${color.bg_2}
+
+label-mounted = %used%
+label-mounted-padding-right = 4 pt
+label-mounted-foreground = ${color.bg-alt}
+label-mounted-background = ${color.bg_2}
+label-unmounted = %mountpoint%: not mounted
+label-unmounted-padding-right = 4 pt
+label-unmounted-foreground = ${color.bg-alt}
+label-unmounted-background = ${color.bg_2}
+
+######################################################
+
+[module/network]
+type = internal/network
+interface = wlan0
+
+interval = 3.0
+accumulate-stats = true
+unknown-as-up = true
+speed-unit = ""
+
+format-connected = <label-connected>
+format-connected-prefix = 
+format-connected-prefix-padding = 4 pt
+label-connected = "%{A1:OpenApps --netmanager:}%netspeed%%{A}"
+label-connected-padding-right = 4 pt
+format-connected-prefix-foreground = ${color.icon_color}
+format-connected-prefix-background = ${color.bg_2}
+label-connected-foreground = ${color.bg-alt}
+label-connected-background = ${color.bg_2}
+
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = 
+format-disconnected-prefix-padding = 4 pt
+format-disconnected-foreground = ${color.icon_color}
+format-disconnected-background = ${color.bg_2}
+label-disconnected = "%{A1:OpenApps --netmanager:}Offline%{A}"
+label-disconnected-padding-right = 4 pt
+label-disconnected-foreground = ${color.bg-alt}
+label-disconnected-background = ${color.bg_2}
+
+######################################################
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
+
+format-volume = <label-volume>
+format-volume-prefix = ""
+format-volume-prefix-padding = 4 pt
+format-volume-foreground = ${color.icon_color}
+format-volume-background = ${color.bg_2}
+
+label-volume = "%percentage%"
+label-volume-padding-right = 4 pt
+label-volume-foreground = ${color.bg-alt}
+label-volume-background = ${color.bg_2}
+
+format-muted = <label-muted>
+format-muted-prefix = ""
+format-muted-prefix-padding = 4 pt
+format-muted-prefix-foreground = ${color.icon_color}
+format-muted-prefix-background = ${color.bg_2}
+label-muted = "Muted"
+label-muted-padding-right = 4 pt
+label-muted-background = ${color.bg_2}
+label-muted-foreground = ${color.bg-alt}
+
+click-right = OpenApps --soundcontrol
+
+######################################################
+
+[module/brightness]
+type = internal/backlight
+card = ${system.sys_graphics_card}
+
+enable-scroll = false
+
+format = <ramp><label>
+label = "%percentage%%"
+
+ramp-0 = 󱩎
+ramp-1 = 󱩎
+ramp-2 = 󱩑
+ramp-3 = 󱩑
+ramp-4 = 󱩓
+ramp-5 = 󱩓
+ramp-6 = 󱩓
+ramp-7 = 󱩖
+ramp-8 = 󱩖
+ramp-9 = 󱩖
+ramp-font = 2
+ramp-padding = 4pt
+ramp-foreground = ${color.amber}
+
+######################################################
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+adapter = AC
+poll-interval = 2
+time-format = %H:%M
+
+format-charging = <animation-charging><label-charging>
+label-charging = %percentage%%
+
+format-discharging = <ramp-capacity><label-discharging>
+label-discharging = %percentage%%
+
+format-full = <label-full>
+format-full-prefix = 
+format-full-prefix-font = 3
+format-full-prefix-foreground = ${color.icon_strong}
+label-full = %percentage%%
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${color.icon_strong}
+ramp-capacity-font = 3
+ramp-capacity-padding = 4 pt
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${color.icon_strong}
+animation-charging-font = 3
+animation-charging-padding = 4 pt
+animation-charging-framerate = 700
+
+######################################################
+
+[module/weather]
+type = custom/script
+exec = Weather wmodule
+interval = 900
+format = <label>
+label = "%output%"
+
+######################################################
+
+[module/bspwm]
+type = internal/bspwm
+
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+pin-workspaces = true
+occupied-scroll = false
+
+ws-icon-0 = 1;X
+ws-icon-1 = 2;X
+ws-icon-2 = 3;X
+ws-icon-3 = 4;X
+ws-icon-4 = 5;X
+ws-icon-5 = 6;X
+ws-icon-default = "♟" 
+
+
+format = <label-state>
+format-font = 3
+
+label-focused = は 
+label-focused-padding = 1
+label-focused-foreground = ${color.icon_strong}
+
+label-occupied = み
+label-occupied-padding = 1
+label-occupied-foreground= ${color.pink}
+
+label-urgent = %icon%
+label-urgent-padding = 1
+
+label-empty = さ
+label-empty-foreground = ${color.fg}
+label-empty-padding = 1
+
+label-separator = ""
+label-separator-padding = 0
+label-separator-foreground = ${color.bg-alt}
+
+######################################################
+
+[module/title]
+type = internal/xwindow
+
+format = <label>
+format-prefix = "󱂬"
+format-prefix-foreground = ${color.icon_strong}
+
+label = %title%
+label-padding = 4 pt
+label-maxlen = 30
+
+label-empty = "Arch Linux"
+label-empty-padding = 4 pt
+label-empty-foreground = ${color.grey}
+
+######################################################
+
+[module/updates]
+type = custom/script
+exec = Updates --get-updates
+interval = 120
+label = "%output%"
+label-padding-right = 4 pt
+label-foreground = ${color.bg}
+label-background = ${color.green}
+click-left = OpenApps --update
+click-right = OpenApps --checkupdates
+format-prefix = ""
+format-prefix-padding = 4 pt
+format-prefix-foreground = ${color.bg}
+format-prefix-background = ${color.green}
+
+######################################################
+
+[module/launcher]
+type = custom/text
+
+label = 󰣇
+label-foreground = ${color.icon_strong}
+
+click-left = OpenApps --menu
+click-right = RiceSelector
+
+######################################################
+
+[module/sep]
+type = custom/text
+label = " "
+label-foreground = ${color.bg-alt}
+
+######################################################
+
+[module/sep2]
+type = custom/text
+label = " 󰇙 "
+label-foreground = ${color.pink}
+
+######################################################
+
+[module/cpu_bar]
+type = internal/cpu
+
+interval = 0.5
+;; agregar <bar-load> o <ramp-load> antes de label para agregar barrita chida
+format = <label>
+format-prefix = ""
+format-prefix-padding = 4 pt
+format-prefix-foreground = ${color.icon_color}
+format-prefix-background = ${color.bg_2}
+
+label = "%percentage%%"
+label-padding-right = 4 pt
+label-foreground = ${color.bg-alt}
+label-background = ${color.bg_2}
+
+######################################################
+
+[module/memory_bar]
+type = internal/memory
+
+interval = 3
+
+format = <label>
+format-prefix = ""
+format-prefix-padding = 4 pt
+format-prefix-foreground = ${color.icon_color}
+format-prefix-background = ${color.bg_2}
+
+label = "%used%"
+label-padding-right = 4 pt
+label-foreground = ${color.bg-alt}
+label-background = ${color.bg_2}
+
+######################################################
+
+[module/mplayer]
+type = custom/text
+label = ""
+label-foreground = ${color.purple}
+
+click-left = OpenApps --player
+click-right = OpenApps --music
+
+[module/usercard]
+type = custom/text
+label =  ""
+label-foreground = ${color.yellow}
+
+click-left = OpenApps --usercard
+
+[module/power]
+type = custom/text
+label = ""
+label-padding-left = 4 pt
+label-foreground = ${color.icon_strong}
+
+click-left = OpenApps --powermenu
+
+#####################################################
+
+[module/tray]
+type = internal/tray
+
+format = <tray>
+format-background = ${color.bg}
+tray-background = ${color.bg}
+tray-foreground = ${color.fg}
+tray-spacing = 4px
+tray-padding = 0px
+tray-size = 72%
+
+#####################################################
+
+[module/bluetooth]
+type = custom/script
+exec = ~/.config/bspwm/src/bluetooth.sh
+interval = 3
+
+format = <label>
+format-font = 2
+label = "%output%"
+click-left = OpenApps --bluetooth
+
+#####################################################
+
+[module/xkeyboard]
+type = internal/xkeyboard
+
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+format = <label-layout>
+format-prefix = " "
+format-prefix-font = 3
+format-prefix-foreground = ${color.cyan}
+
+label-layout = %{A1:OpenApps --keyboard:}%layout%%{A}
+
+[color]
+background = ${wal.color0}
+background-alt = ${wal.color8}
+foreground = ${wal.color7}
+foreground-alt = ${wal.color7}
+primary = ${wal.color1}
+secondary = ${wal.color2}
+alert = ${wal.color3}
+
+trans = #00000000
+white = #FFFFFF
+black = #000000
+
+red = #c60000
+pink = #ff6060
+purple = #c3a5e6
+blue = #34738e
+cyan = #eabbb9
+teal = #00B19F
+green = #9bced7
+lime = #8ec07c
+yellow = #f1ca93
+amber = #fac33b
+orange = #f08641
+brown = #AC8476
+grey = #384148
+indigo = #6C77BB
+blue-gray = #6D8895
+
+[bar/cristina-bar]
+monitor = ${env:MONITOR:}
+monitor-strict = false
+override-redirect = false
+
+bottom = true
+fixed-center = false
+
+width = 100%
+height = 20
+
+offset-x = 0%
+offset-y = 0
+
+background = ${color.bg-alt}
+foreground = ${color.white}
+
+radius-bottom = 1
+
+line-size = 3
+line-color = ${color.bg-alt}
+
+border-size = 6
+border-color = ${color.bg-alt}
+
+padding-left = 2
+padding-right = 1
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "JetBrainsMono:style=Bold:pixelsize=9;2"
+font-1 = "Material Design Icons Desktop:size=13;3"
+font-2 = "Font Awesome 6 Free Solid:size=10;3"
+font-3 = "MesloLGS NF:style=Regular:size=13;3"
+font-4 = "GL\-NovantiquaMinamoto:style=Regular:size=13;3"
+
+
+;Modules availables but not active:
+;	brightness		weather		xkeyboard
+modules-left = launcher sep2 bspwm sep2 title
+modules-center =
+modules-right = sep battery  bri filesystem brd byi cpu_bar byd bpi memory_bar bpd bbi pulseaudio bbd boi network bod bii date bid sep tray sep power
+
+separator =
+dim-value = 1.0
+;locale = es_MX.UTF-8
+
+wm-restack = bspwm
+enable-ipc = true
+
+cursor-click = pointer
+cursor-scroll =
+
+[settings]
+
+screenchange-reload = false
+
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+
+pseudo-transparency = false
