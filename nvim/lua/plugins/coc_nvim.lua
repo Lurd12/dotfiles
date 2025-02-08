@@ -1,22 +1,22 @@
-return {
-  {
-    "neoclide/coc.nvim",
-    branch = "release",
-    build = "yarn install --frozen-lockfile", -- Instala las dependencias de coc.nvim
+return   {
+    'neoclide/coc.nvim',
+    branch = 'release',
     config = function()
-      -- Configuración básica de coc.nvim
+      -- Coc.nvim configuration
       vim.g.coc_global_extensions = {
-        'coc-tsserver',  -- Soporte para TypeScript/JavaScript
-        'coc-pyright',   -- Soporte para Python
-        'coc-json',      -- Soporte para JSON
-        'coc-rust-analyzer', -- Soporte para Rust
+        'coc-pyright',  -- Python language server
+        'coc-tsserver', -- JavaScript/TypeScript
+        'coc-eslint',   -- ESLint integration
+        'coc-json',     -- JSON support
       }
 
-      -- Atajos de teclado personalizados
-      vim.api.nvim_set_keymap('n', 'gd', '<Plug>(coc-definition)', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', 'gr', '<Plug>(coc-references)', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', 'K', ':call CocActionAsync("doHover")<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>rn', '<Plug>(coc-rename)', { noremap = true, silent = true })
-    end,
-  },
-}
+      -- Map Tab to select the completion item
+      vim.cmd [[
+        " Use <Tab> to confirm the completion
+        inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-y>"
+
+        " Use <S-Tab> to move to the previous item
+        inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+      ]]
+    end
+  }

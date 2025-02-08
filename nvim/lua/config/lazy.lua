@@ -50,9 +50,15 @@ vim.keymap.set("n", "<C-k>", "<Cmd>SmartCursorMoveUp<CR>")
 vim.keymap.set("n", "<C-j>", "<Cmd>SmartCursorMoveDown<CR>")
 
 
+--ToggleTerm
+vim.keymap.set("n", "<leader>q", ":ToggleTerm size=10<CR>")
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+
+--Colorscheme
+vim.cmd.colorscheme "maple_dark"
 
 
 --Lua line 
@@ -113,3 +119,25 @@ require('lualine').setup {
   tabline = {},
   extensions = {},
 }
+
+
+
+-- Define que cada tab equivale a 4 espacios
+vim.opt.tabstop = 4
+
+-- Define que la indentación usa 4 espacios
+vim.opt.shiftwidth = 4
+
+-- Convierte los tabuladores en espacios
+vim.opt.expandtab = true
+
+--portapapeles
+vim.opt.clipboard = 'unnamedplus'
+
+--git colors
+
+  vim.api.nvim_set_hl(0, 'GitSignsAdd', { link = 'GitSignsAdd' })
+  vim.api.nvim_set_hl(0, 'GitSignsChange', { link = 'GitSignsChange' })
+  vim.api.nvim_set_hl(0, 'GitSignsChangedelete', { link = 'GitSignsChange' })
+  vim.api.nvim_set_hl(0, 'GitSignsDelete', { link = 'GitSignsDelete' })
+  vim.api.nvim_set_hl(0, 'GitSignsTopdelete', { link = 'GitSignsDelete' })

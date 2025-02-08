@@ -58,12 +58,12 @@ def modify_rofy(colors_dict):
     content=file.readlines()
 
     for i in range(len(content)):
-        if content[i].startswith("\tbackground-color"):
-            content[i] = f"\tbackground-color: {colors['background']};\n"
-        elif content[i].startswith("\tforeground"):
-            content[i] = f"\tforeground: {colors['foreground']};\n"
-        elif content[i].startswith("\tactive-background"):
-            content[i] = f"\tactive-background: {color_med};\n"
+        if content[i].startswith("\tbg:"):
+            content[i] = f"\tbg: {colors['background']};\n"
+        elif content[i].startswith("\tfg"):
+            content[i] = f"\tfg: {colors['foreground']};\n"
+        elif content[i].startswith("\tbgt"):
+            content[i] = f"\tbgt: {colors['background']}95;\n"
 
     file = open("/home/lur/.config/rofi/config.rasi","w")
     file.writelines(content)

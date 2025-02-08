@@ -1,16 +1,20 @@
 {
   "aura-theme": { "branch": "feat/neovim-port", "commit": "c607be79c8eeaa5a5d7ac66421f8b5c51d936fe8" },
+  "catppuccin": { "branch": "main", "commit": "4965db2d6155c25db4e8417465fc2703fdf4c2b7" },
   "coc.nvim": { "branch": "release", "commit": "b45563656be26e518992ffede778f918dc443012" },
-  "lazy.nvim": { "branch": "main", "commit": "7527af40ddd4a93a02911be570b32609b9d4ea53" },
+  "doki-theme": { "branch": "master", "commit": "407c75de0049a184d6eb09ad415d2ccbc22ba612" },
+  "gitsigns.nvim": { "branch": "main", "commit": "c23bbd3ed2c7a3fdc3399e97e24f9e158f57612f" },
+  "lazy.nvim": { "branch": "main", "commit": "f15a93907ddad3d9139aea465ae18336d87f5ce6" },
   "lualine.nvim": { "branch": "master", "commit": "2a5bae925481f999263d6f5ed8361baef8df4f83" },
-  "mini.nvim": { "branch": "main", "commit": "509e086e13a1aa7105e427bb1b122a7174716b77" },
+  "mini.nvim": { "branch": "main", "commit": "d479cf109eeff8a7e0bf978079ea1dd2171648a0" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "5d172e8315444dbc32867d1c7b04d8e7e68ec4e1" },
   "nui.nvim": { "branch": "main", "commit": "53e907ffe5eedebdca1cd503b00aa8692068ca46" },
   "nvim-autopairs": { "branch": "master", "commit": "3d02855468f94bf435db41b661b58ec4f48a06b7" },
-  "nvim-treesitter": { "branch": "master", "commit": "73b68cb943cd6718bdee318a70874620070255d4" },
+  "nvim-treesitter": { "branch": "master", "commit": "62911c78a868bac24c8a86f2c1c412d0b799f885" },
   "nvim-web-devicons": { "branch": "master", "commit": "402377242b04be3f4f0f3720bd952df86e946c30" },
   "plenary.nvim": { "branch": "master", "commit": "3707cdb1e43f5cea73afb6037e6494e7ce847a66" },
-  "smart-splits.nvim": { "branch": "master", "commit": "fc7bb00fe67ab504356bed4310d23c2e4cb4b06b" },
+  "smart-splits.nvim": { "branch": "master", "commit": "7f72bc445106fa041f79ee73e72505c093d0da10" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
-  "toggleterm.nvim": { "branch": "main", "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c" }
+  "toggleterm.nvim": { "branch": "main", "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c" },
+  "vim-fugitive": { "branch": "master", "commit": "b068eaf1e6cbe35d1ac100d435cd7f7b74a5c87d" }
 }
