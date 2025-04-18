@@ -1,6 +1,6 @@
 #
 # wm independent hotkeys
-#/
+#
 super + i 
 	hints
 
@@ -8,7 +8,7 @@ super + space
 	hints --mode scroll
 
 
-#Block screen
+# Block screen
 super + b
   /home/lur/.config/lock.sh   
 # terminal emulator
@@ -16,7 +16,7 @@ super + alt + Return
 	xfce4-terminal
 # program launcher
 super + d
-  rofi -show drun
+  rofi -config /home/lur/.config/rofi/df_conf/config.rasi -show drun
 
 
 # make sxhkd reload its configuration files:

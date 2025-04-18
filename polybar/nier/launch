@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cp /home/lur/.config/polybar/nier/config.ini /home/lur/.config/polybar
+
+dir="$HOME/.config/polybar"
+killall polybar
+polybar tabs & sleep 0.5
+polybar tabsSmall & sleep 0.5
+polybar phantom &

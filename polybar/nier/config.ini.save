@@ -1,0 +1,285 @@
+
+[colors]
+clear = #00000000
+
+grey = #ffcdc9b0
+lgrey = #ffdad4bb
+vdgrey = #ff4e4b42
+dgrey = #ffb4af9a
+
+red = #ffcd664d
+blue = #ff3da89e
+
+yellow = #ffe7ddaf
+lbrown = #ffc0b4960
+brown = #ffbc9d83
+dbrown = #8b7e67
+
+[bar/tabs]
+monitor-strict = false
+override-redirect = false
+wm-restack = bspwm
+
+width=100%
+height=3%
+modules-center=workspaces
+
+underline-size=0
+underline-color=${colors.red}
+
+border-top-size = 0.2%
+background = ${colors.clear}
+
+font-0 = "SCE\\-PS3 Rodin LATIN2:style=Light:size=16;6"
+font-1 = "Font Awesome 5 Free Regular:style=Regular:size=16;3"
+font-2 = "Font Awesome 5 Free Solid:style=Solid:size=16;3"
+
+[bar/tabsSmall]
+monitor-strict = false
+override-redirect = false
+wm-restack = bspwm
+width=100%
+height=1%
+
+modules-center=bar
+background = ${colors.clear}
+font-0 = "SCE\\-PS3 Rodin LATIN2:style=Light:size=16;6"
+font-1 = "Font Awesome 5 Free Regular:style=Regular:size=16;3"
+font-2 = "Font Awesome 5 Free Solid:style=Solid:size=16;3"
+
+border-top-size = 3.1%
+
+
+[module/workspaces]
+monitor-strict = false
+override-redirect = false
+wm-restack = bspwm
+type = internal/xworkspaces
+#fuzzy-match = true
+format = <label-state>
+
+icon-0 = "NETWORK;"
+icon-1 = "CALENDAR;"
+icon-2 = "STORAGE;"
+icon-3 = "TERMINAL;"
+icon-4 = "MUSICS;"
+icon-5 = "DATABASE;"
+icon-6 = "SYSTEM;"
+icon-default = 
+
+label-active = %{T2} %icon% %{T-}%name%
+;"%{T2} %{B#f00} %icon% %{B-} %{T-}%name%"
+label-active-foreground = ${colors.lgrey}
+label-active-background = ${colors.vdgrey}
+label-active-padding-top = 1%
+label-active-padding-right = 2
+label-active-margin = 3
+
+
+label-empty = %{T2} %icon% %{T-}%name%
+label-empty-foreground = ${colors.vdgrey}
+label-empty-background = ${colors.dgrey}
+label-empty-padding-right = 2
+label-empty-margin = 3
+
+label-occupied = %{T2} %icon% %{T-}%name%
+label-occupied-foreground = ${colors.vdgrey}
+label-occupied-background = ${colors.dgrey}
+label-occupied-padding-right = 2
+label-occupied-margin = 3
+
+
+[module/bar]
+monitor-strict = false
+override-redirect = false
+wm-restack = bspwm
+type = internal/xworkspaces
+format = <label-state>
+label-mode = %mode%
+
+icon-0 = "NETWORK;"
+icon-1 = "CALENDAR;"
+icon-2 = "STORAGE;"
+icon-3 = "TERMINAL;"
+icon-4 = "MUSICS;"
+icon-5 = "DATABASE;"
+icon-6 = "SYSTEM;"
+icon-7 = ".;."
+icon-default = 
+
+label-active = %{T2} %icon% %{T-}%name%
+label-active-foreground = ${colors.vdgrey}
+label-active-background = ${colors.vdgrey}
+label-active-padding-right = 2
+label-active-margin = 3
+
+label-empty = %{T2} %icon% %{T-}%name%
+label-empty-foreground = ${colors.clear}
+label-empty-background = ${colors.clear}
+label-empty-padding-right = 2
+label-empty-margin = 3
+
+label-occupied = %{T2} %icon% %{T-}%name%
+label-occupied-foreground = ${colors.clear}
+label-occupied-background = ${colors.clear}
+label-occupied-padding-right = 2
+label-occupied-margin = 3
+
+[bar/phantom]
+monitor-strict = false
+override-redirect = false
+wm-restack = bspwm
+modules-left = cpu memory temperature
+modules-right = battery pulseaudio network date
+font-0 = "JetBrains Mono Medium:size=9.5;3"
+font-1 = "feather:size=11;3"
+font-2 = "Font Awesome 5 Free Solid:size=10;3"
+bottom=true
+background = ${colors.clear}
+width=100%
+height=2%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[module/cpu]
+type = internal/cpu
+format = <label>
+format-prefix = 
+label = " %percentage%%"
+format-foreground = ${colors.vdgrey}
+format-background = ${colors.clear}
+format-padding = 2
+
+[module/date]
+type = internal/date
+time = " %H:%M:%S"
+time-alt = " %a, %d %b %Y"
+format = <label>
+label = %time%
+format-foreground = ${colors.vdgrey}
+format-background = ${colors.clear}
+format-padding = 2
+
+[module/memory]
+type = internal/memory
+format = <label>
+format-prefix =  
+label = " %used%"
+format-foreground = ${colors.vdgrey}
+format-background = ${colors.clear}
+format-padding = 2
+
+[module/network]
+type = internal/network
+interface = wlan0
+format-connected = <label-connected>
+format-connected-prefix = 
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = 
+format-connected-foreground = ${colors.vdgrey}
+format-disconnected-foreground = ${colors.vdgrey}
+#label-connected = "%{A1:networkmanager_dmenu &:} %essid%%{A}"
+label-connected = " %downspeed% | %upspeed%"
+label-disconnected = "%{A1:networkmanager_dmenu &:}"
+format-connected-background = ${colors.clear}
+format-disconnected-background = ${colors.clear}
+format-connected-padding = 2
+format-disconnected-padding = 2
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
+
+format-volume = <label-volume>
+format-volume-prefix = ""
+format-volume-prefix-padding = 1 
+format-volume-foreground = ${colors.vdgrey}
+format-volume-background = ${colors.clear}
+
+label-volume = "%percentage%"
+label-volume-padding-right = 1
+label-volume-foreground = ${colors.vdgrey}
+label-volume-background = ${colors.clear}
+
+format-muted = <label-muted>
+format-muted-prefix = ""
+format-muted-prefix-padding =1 
+format-muted-prefix-foreground = ${colors.vdgrey}
+format-muted-prefix-background = ${colors.clear}
+label-muted = "Muted"
+label-muted-padding-right = 1 
+label-muted-background = ${colors.clear}
+label-muted-foreground = ${colors.vdgrey}
+
+
+
+
+[module/temperature]
+type = internal/temperature
+hwmon-path = /sys/class/hwmon/hwmon1/temp1_input
+format-prefix = " "
+format = <label>
+label = " %temperature%"
+format-foreground = ${colors.vdgrey}
+format-background = ${colors.clear}
+format-padding = 2
+
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+adapter = AC
+poll-interval = 2
+time-format = %H:%M
+
+format-charging = <animation-charging><label-charging>
+label-charging = %percentage%%
+label-charging-foreground = ${colors.vdgrey}
+label-charging-padding-right = 2
+
+format-discharging = <ramp-capacity><label-discharging>
+label-discharging = %percentage%%
+label-discharging-foreground = ${colors.vdgrey}
+label-discharging-padding-right = 2
+
+format-full = <label-full>
+format-full-prefix = 
+format-full-prefix-font = 3
+format-full-prefix-foreground = ${colors.vdgrey}
+label-full = %percentage%%
+label-full-foreground = ${colors.vdgrey}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.vdgrey}
+ramp-capacity-font = 3
+ramp-capacity-padding = 4 pt
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.vdgrey}
+animation-charging-font = 3
+animation-charging-padding = 4 pt
+animation-charging-framerate = 700
+

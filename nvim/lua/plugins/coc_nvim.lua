@@ -14,8 +14,8 @@ return   {
       vim.cmd [[
         " Use <Tab> to confirm the completion
         inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-y>"
-
         " Use <S-Tab> to move to the previous item
+        inoremap <silent><expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"       
         inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
       ]]
     end
