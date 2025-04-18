@@ -1,8 +1,0 @@
-2024-12-13 13:05:05.771 [info] update#setState disabled
-2024-12-13 13:05:05.771 [info] update#ctor - updates are disabled as there is no update URL
-2024-12-13 13:05:41.257 [error] CodeWindow: failed to load (reason: <unknown>, code: -3)
-2024-12-13 13:05:41.706 [error] CodeWindow: failed to load (reason: <unknown>, code: -3)
-2024-12-13 13:05:42.794 [error] CodeWindow: failed to load (reason: <unknown>, code: -3)
-2024-12-13 13:05:43.485 [error] CodeWindow: failed to load (reason: <unknown>, code: -3)
-2024-12-13 13:14:48.286 [error] CodeWindow: failed to load (reason: <unknown>, code: -3)
-2024-12-13 13:15:19.545 [info] Extension host with pid 1710 exited with code: 0, signal: unknown.
